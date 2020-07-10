@@ -1,17 +1,16 @@
-
-.section__buttonContainer {
+.buttonContainer {
     display: grid;
     grid-template-columns: 1fr auto;
 }
 
 @media (max-width: 767px) {
-    .section__buttonContainer {
+    .buttonContainer {
         grid-template-columns: 1fr;
         margin-bottom: 20px;
     }
 }
 
-.section__button {
+.buttonContainer__button {
     background-color: transparent;
     border: none;
     padding: 20px;
@@ -20,19 +19,19 @@
 }
 
 @media (max-width: 767px) {
-    .section__button {
+    .buttonContainer__button {
         padding: 15px;
     }
 }
 
-.section__button:hover {
+.buttonContainer__button:hover {
     color: hsl(180, 100%, 35%);
 }
 
-.section__button:active {
+.buttonContainer__button:active {
     color: hsl(180, 100%, 45%);
 }
 
-.section__button:disabled {
+.buttonContainer__button:disabled {
     color: #ccc;
 }

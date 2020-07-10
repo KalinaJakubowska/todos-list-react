@@ -4,20 +4,17 @@ import "./style.css";
 
 const Buttons = ({ tasks, isHidingEnabled }) => (
 
-    <div className="section__buttonContainer">
+    <div className="buttonContainer">
         {tasks.length > 0 && (
             <React.Fragment>
-                <button className="section__button js-hideAllButton">
+                <button className="buttonContainer__button">
                     {isHidingEnabled ? "Pokaż" : "Ukryj"} ukończone
                 </button>
-                <button className=" section__button" disabled={tasks.every(({ done }) => done)}>
+                <button className="buttonContainer__button" disabled={tasks.every(({ done }) => done)}>
                     Ukończ wszystkie
                 </button>
             </React.Fragment>
-        )
-        }
-
-
+        )}
     </div>
 );
 
