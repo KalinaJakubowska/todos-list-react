@@ -2,9 +2,7 @@ import React from "react";
 import "./style.css";
 
 const Tasks = ({ tasks, isHidingEnabled }) => (
-
     <ul className="list">
-
         {tasks.map(({ id, name, done }) => (
             <li key={id}
                 className={`list__item${done && isHidingEnabled ? " list__item--hidden" : ""}`}
@@ -14,11 +12,8 @@ const Tasks = ({ tasks, isHidingEnabled }) => (
                     {name}
                 </span>
                 <button className="list__button list__button--delete">🗑</button>
-
             </li>
-
         ))}
     </ul>
 )
-
 export default Tasks;

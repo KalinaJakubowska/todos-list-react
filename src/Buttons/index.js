@@ -1,7 +1,6 @@
 import React from "react";
 import "./style.css";
 
-
 const Buttons = ({ tasks, isHidingEnabled }) => (
 
     <div className="buttonContainer">
@@ -17,5 +16,4 @@ const Buttons = ({ tasks, isHidingEnabled }) => (
         )}
     </div>
 );
-
 export default Buttons;
