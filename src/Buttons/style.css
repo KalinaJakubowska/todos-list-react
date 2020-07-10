@@ -1,0 +1,38 @@
+
+.section__buttonContainer {
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+@media (max-width: 767px) {
+    .section__buttonContainer {
+        grid-template-columns: 1fr;
+        margin-bottom: 20px;
+    }
+}
+
+.section__button {
+    background-color: transparent;
+    border: none;
+    padding: 20px;
+    color: teal;
+    transition: color 0.3s;
+}
+
+@media (max-width: 767px) {
+    .section__button {
+        padding: 15px;
+    }
+}
+
+.section__button:hover {
+    color: hsl(180, 100%, 35%);
+}
+
+.section__button:active {
+    color: hsl(180, 100%, 45%);
+}
+
+.section__button:disabled {
+    color: #ccc;
+}
