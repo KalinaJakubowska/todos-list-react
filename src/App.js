@@ -15,7 +15,6 @@ const isHidingEnabled = false;
 
 function App() {
   return (
-    <div className="App">
       <Container>
         <Header title="Lista zadań" />
         <Section
@@ -29,7 +28,6 @@ function App() {
           body={<Tasks tasks={tasks} isHidingEnabled={isHidingEnabled} />}
         />
       </Container>
-    </div>
   );
 }
 export default App;
