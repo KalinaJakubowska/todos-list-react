@@ -1,16 +1,16 @@
-.buttonContainer {
+.buttons {
     display: grid;
     grid-template-columns: 1fr auto;
 }
 
 @media (max-width: 767px) {
-    .buttonContainer {
+    .buttons {
         grid-template-columns: 1fr;
         margin-bottom: 20px;
     }
 }
 
-.buttonContainer__button {
+.buttons__button {
     background-color: transparent;
     border: none;
     padding: 20px;
@@ -19,19 +19,19 @@
 }
 
 @media (max-width: 767px) {
-    .buttonContainer__button {
+    .buttons__button {
         padding: 15px;
     }
 }
 
-.buttonContainer__button:hover {
+.buttons__button:hover {
     color: hsl(180, 100%, 35%);
 }
 
-.buttonContainer__button:active {
+.buttons__button:active {
     color: hsl(180, 100%, 45%);
 }
 
-.buttonContainer__button:disabled {
+.buttons__button:disabled {
     color: #ccc;
 }
