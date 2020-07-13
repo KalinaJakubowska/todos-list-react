@@ -11,6 +11,7 @@ Project for YouCode Academy.
 - HTML
 - CSS
 - JS
+- React.js
 
 ## Methodologies:
 - BEM
