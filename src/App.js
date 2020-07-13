@@ -1,6 +1,6 @@
 import React from 'react';
 import Form from "./Form";
-import Tasks from "./Tasks";
+import List from "./List";
 import Buttons from "./Buttons";
 import Section from "./Section";
 import Header from "./Header";
@@ -25,7 +25,7 @@ function App() {
         <Section
           title="Lista zadań"
           extraHeaderContent={<Buttons tasks={tasks} isHidingEnabled={isHidingEnabled} />}
-          body={<Tasks tasks={tasks} isHidingEnabled={isHidingEnabled} />}
+          body={<List tasks={tasks} isHidingEnabled={isHidingEnabled} />}
         />
       </Container>
   );

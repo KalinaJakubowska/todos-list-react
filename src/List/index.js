@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-const Tasks = ({ tasks, isHidingEnabled }) => (
+const List = ({ tasks, isHidingEnabled }) => (
     <ul className="list">
         {tasks.map(({ id, name, done }) => (
             <li 
@@ -17,4 +17,4 @@ const Tasks = ({ tasks, isHidingEnabled }) => (
         ))}
     </ul>
 )
-export default Tasks;
+export default List;
