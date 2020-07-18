@@ -1,10 +1,10 @@
 import React from "react";
 import "./style.css";
 
-const List = ({ tasks, isHidingEnabled }) => (
+const List = ({ tasks, isHidingEnabled, deleteTask }) => (
     <ul className="list">
         {tasks.map(({ id, name, done }) => (
-            <li 
+            <li
                 key={id}
                 className={`list__item${done && isHidingEnabled ? " list__item--hidden" : ""}`}
             >
@@ -12,7 +12,12 @@ const List = ({ tasks, isHidingEnabled }) => (
                 <span className={`list__taskName ${done ? "list__taskName--done" : ""}`}>
                     {name}
                 </span>
-                <button className="list__button list__button--delete">🗑</button>
+                <button
+                    onClick={() => deleteTask(id)}
+                    className="list__button list__button--delete"
+                >
+                    🗑
+                </button>
             </li>
         ))}
     </ul>
