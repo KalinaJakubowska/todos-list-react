@@ -33,14 +33,16 @@ function App() {
     setTasks(tasks => tasks.map(task => ({ ...task, done: true })))
   };
   const addNewTask = (name) => {
-    setTasks(tasks => [
-      ...tasks,
-      {
-        name,
-        done: false,
-        id: tasks.length ? tasks[tasks.length - 1].id + 1 : 1,
-      },
-    ]);
+    if (name) {
+      setTasks(tasks => [
+        ...tasks,
+        {
+          name,
+          done: false,
+          id: tasks.length ? tasks[tasks.length - 1].id + 1 : 1,
+        },
+      ]);
+    }
   }
 
   return (
