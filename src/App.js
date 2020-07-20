@@ -7,15 +7,13 @@ import Header from "./Header";
 import Container from "./Container";
 
 function App() {
-  const [isHidingEnabled, setIsHidingEnabled] = useState(false);
-  const [tasks, setTasks] = useState(
-    [
-      { id: 1, name: "Pomiziać koty", done: true },
-      { id: 2, name: "Powtórzyć punkt pierwszy", done: false },
-    ]
-  );
+  const [isHidingEnabled, toggleIsHidingEnabled] = useState(false);
+  const [tasks, setTasks] = useState([
+    { id: 1, name: "Pomiziać koty", done: true },
+    { id: 2, name: "Powtórzyć punkt pierwszy", done: false },
+  ]);
   const toggleHideDone = () => {
-    setIsHidingEnabled(isHidingEnabled => !isHidingEnabled);
+    toggleIsHidingEnabled(isHidingEnabled => !isHidingEnabled);
   };
   const deleteTask = id => {
     setTasks(tasks => tasks.filter(task => task.id !== id));
@@ -30,20 +28,21 @@ function App() {
     }));
   };
   const doAllTasks = () => {
-    setTasks(tasks => tasks.map(task => ({ ...task, done: true })))
+    setTasks(tasks => tasks.map(task => ({ ...task, done: true })));
   };
   const addNewTask = (name) => {
-    if (name) {
-      setTasks(tasks => [
-        ...tasks,
-        {
-          name,
-          done: false,
-          id: tasks.length ? tasks[tasks.length - 1].id + 1 : 1,
-        },
-      ]);
+    if (!name) {
+      return;
     }
-  }
+    setTasks(tasks => [
+      ...tasks,
+      {
+        name,
+        done: false,
+        id: tasks.length ? tasks[tasks.length - 1].id + 1 : 1,
+      },
+    ]);
+  };
 
   return (
     <Container>
@@ -54,20 +53,24 @@ function App() {
       />
       <Section
         title="Lista zadań"
-        extraHeaderContent={<Buttons
-          tasks={tasks}
-          isHidingEnabled={isHidingEnabled}
-          toggleHideDone={toggleHideDone}
-          doAllTasks={doAllTasks}
-        />}
-        body={<List
-          tasks={tasks}
-          isHidingEnabled={isHidingEnabled}
-          deleteTask={deleteTask}
-          toggleTaskDone={toggleTaskDone}
-        />}
+        extraHeaderContent={
+          <Buttons
+            tasks={tasks}
+            isHidingEnabled={isHidingEnabled}
+            toggleHideDone={toggleHideDone}
+            doAllTasks={doAllTasks}
+          />
+        }
+        body={
+          <List
+            tasks={tasks}
+            isHidingEnabled={isHidingEnabled}
+            deleteTask={deleteTask}
+            toggleTaskDone={toggleTaskDone}
+          />
+        }
       />
     </Container>
   );
-}
+};
 export default App;
