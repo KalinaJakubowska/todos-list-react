@@ -7,13 +7,13 @@ import Header from "./Header";
 import Container from "./Container";
 
 function App() {
-  const [isHidingEnabled, toggleIsHidingEnabled] = useState(false);
+  const [isHidingEnabled, setIsHidingEnabled] = useState(false);
   const [tasks, setTasks] = useState([
     { id: 1, name: "Pomiziać koty", done: true },
     { id: 2, name: "Powtórzyć punkt pierwszy", done: false },
   ]);
-  const toggleHideDone = () => {
-    toggleIsHidingEnabled(isHidingEnabled => !isHidingEnabled);
+  const toggleIsHidingEnabled = () => {
+    setIsHidingEnabled(isHidingEnabled => !isHidingEnabled);
   };
   const deleteTask = id => {
     setTasks(tasks => tasks.filter(task => task.id !== id));
@@ -57,7 +57,7 @@ function App() {
           <Buttons
             tasks={tasks}
             isHidingEnabled={isHidingEnabled}
-            toggleHideDone={toggleHideDone}
+            toggleIsHidingEnabled={toggleIsHidingEnabled}
             doAllTasks={doAllTasks}
           />
         }
