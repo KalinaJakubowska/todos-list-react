@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./style.css";
 
 const List = ({ tasks, isHidingEnabled, deleteTask, toggleTaskDone }) => {
+    useEffect(() => {
+        localStorage.setItem("tasks", JSON.stringify(tasks))
+    }, [tasks]);
+
     if (!tasks.length) {
-        return <p>Aktualnie nie masz żadnych zadań do wykonania. Ciesz się wolnym czasem :)</p>;
+        return (
+            <p>
+                Aktualnie nie masz żadnych zadań do wykonania. Ciesz się wolnym czasem :)
+            </p>
+        );
     }
-    
+
     return (
         <ul className="list">
             {tasks.map(({ id, name, done }) => (
