@@ -7,6 +7,7 @@ const Buttons = ({ tasks, isHidingEnabled, toggleIsHidingEnabled, doAllTasks }) 
             <>
                 <button
                     className="buttons__button"
+                    disabled={tasks.every(({ done }) => !done)}
                     onClick={toggleIsHidingEnabled}
                 >
                     {isHidingEnabled ? "Pokaż" : "Ukryj"} ukończone
