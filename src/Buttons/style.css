@@ -16,6 +16,7 @@
     padding: 20px;
     color: teal;
     transition: color 0.3s;
+    cursor: pointer;
 }
 
 @media (max-width: 767px) {
@@ -26,7 +27,6 @@
 
 .buttons__button:hover {
     color: hsl(180, 100%, 35%);
-    cursor: pointer;
 }
 
 .buttons__button:active {
