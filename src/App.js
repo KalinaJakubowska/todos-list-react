@@ -9,11 +9,7 @@ import Container from "./Container";
 function App() {
   const [isHidingEnabled, setIsHidingEnabled] = useState(false);
   const [tasks, setTasks] =
-    useState(
-      JSON.parse(localStorage.getItem("tasks") === null) ?
-        [] :
-        JSON.parse(localStorage.getItem("tasks"))
-    );
+    useState(JSON.parse(localStorage.getItem("tasks")) || []);
 
   const toggleIsHidingEnabled = () => {
     setIsHidingEnabled(isHidingEnabled => !isHidingEnabled);
