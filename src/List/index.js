@@ -1,11 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./style.css";
 
 const List = ({ tasks, isHidingEnabled, deleteTask, toggleTaskDone }) => {
-    useEffect(() => {
-        localStorage.setItem("tasks", JSON.stringify(tasks))
-    }, [tasks]);
-
     if (!tasks.length) {
         return (
             <p>
