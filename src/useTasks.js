@@ -27,6 +27,7 @@ export const useTasks = () => {
         if (!name) {
             return;
         }
+
         setTasks(tasks => [
             ...tasks,
             {
@@ -36,7 +37,7 @@ export const useTasks = () => {
             },
         ]);
     };
-    
+
     return {
         tasks,
         deleteTask,
