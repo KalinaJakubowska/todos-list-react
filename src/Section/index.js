@@ -2,7 +2,7 @@ import React from "react";
 import { Wrapper, Title, Container, Body } from "./styled.js";
 
 const Section = ({ title, extraHeaderContent, body }) => (
-    <Wrapper className="section">
+    <Wrapper>
         <Container>
             <Title>
                 {title}

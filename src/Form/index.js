@@ -16,16 +16,15 @@ const Form = ({ addNewTask }) => {
     }
 
     return (
-        <FormSheet onSubmit={onFormSubmit} className="form">
+        <FormSheet onSubmit={onFormSubmit}>
             <Input
                 ref={inputRef}
                 value={newTaskName}
                 onChange={({ target }) => setNewTaskName(target.value)}
                 autoFocus
                 placeholder="Co jest do zrobienia?"
-                className="form__input"
             />
-            <Button onClick={focusInput} className="form__button">
+            <Button onClick={focusInput}>
                 Dodaj zadanie
             </Button>
         </FormSheet>
