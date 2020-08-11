@@ -13,6 +13,7 @@ const Form = ({ addNewTask }) => {
         event.preventDefault();
         addNewTask(newTaskName.trim());
         setNewTaskName("");
+        focusInput();
     }
 
     return (
@@ -24,7 +25,7 @@ const Form = ({ addNewTask }) => {
                 autoFocus
                 placeholder="Co jest do zrobienia?"
             />
-            <Button onClick={focusInput}>
+            <Button>
                 Dodaj zadanie
             </Button>
         </FormSheet>
