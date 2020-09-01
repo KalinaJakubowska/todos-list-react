@@ -1,7 +1,7 @@
 import React from "react";
 import { List, Item, Content, Button } from "./styled.js";
 
-const Tasks = ({ tasks, isHidingEnabled, deleteTask, toggleTaskDone }) => {
+const TasksList = ({ tasks, isHidingEnabled, deleteTask, toggleTaskDone }) => {
     if (!tasks.length) {
         return (
             <p>
@@ -31,4 +31,4 @@ const Tasks = ({ tasks, isHidingEnabled, deleteTask, toggleTaskDone }) => {
         </List>
     )
 }
-export default Tasks;
+export default TasksList;
