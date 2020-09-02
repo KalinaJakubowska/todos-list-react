@@ -6,7 +6,7 @@ export const List = styled.ul`
     margin: 0;
 `;
 export const Item = styled.li`
-    border-bottom: 3px solid #eee;
+    border-bottom: 3px solid ${({ theme }) => theme.color.gallery};
     display: grid;
     grid-template-columns: auto 1fr auto;
     grid-gap: 10px;
@@ -27,13 +27,13 @@ export const Button = styled.button`
     height: 30px;
     border: none;
     transition: background 0.3s;
-    color: white;
+    color: ${({ theme }) => theme.color.white};
     font-size: 22px;
     padding: 0px;
     cursor: pointer;
 
     ${({ toggleDone }) => toggleDone && css`
-        background-color: green;
+        background-color: ${({ theme }) => theme.color.green};
 
         &:hover {
             background-color: hsl(120, 100%, 35%);
@@ -43,7 +43,7 @@ export const Button = styled.button`
         }
     `}
     ${({ remove }) => remove && css`
-        background-color: red;
+        background-color: ${({ theme }) => theme.color.red};
 
         &:hover {
             background-color: hsl(0, 100%, 65%);

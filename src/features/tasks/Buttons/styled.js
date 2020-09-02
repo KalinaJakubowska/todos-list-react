@@ -10,10 +10,10 @@ export const ButtonsContainer = styled.div`
     }
 `;
 export const Button = styled.button`
-    background-color: transparent;
+    background-color: ${({ theme }) => theme.color.transparent};
     border: none;
     padding: 20px;
-    color: teal;
+    color: ${({ theme }) => theme.color.teal};
     transition: color 0.3s;
     cursor: pointer;
 
@@ -30,6 +30,6 @@ export const Button = styled.button`
     }
 
     &:disabled {
-        color: #ccc;
+        color: ${({ theme }) => theme.color.silver};
     }
 `;
