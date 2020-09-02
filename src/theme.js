@@ -1,12 +1,13 @@
 export const theme = {
     color: {
-        silver: "#ccc",
-        gallery: "#eee",
-        white: "#fff",
-        green: "green",
-        red: "red",
-        teal: "teal",
+        main: "teal",
+        second: "#fff",
+        shadow: "#ccc",
+        background: "#eee",
         transparent: "transparent",
+        check: "green",
+        remove: "red",
+        text: "black",
     },
     breakpoint: {
         mobileMax: 767,

@@ -13,7 +13,7 @@ export const Button = styled.button`
     background-color: ${({ theme }) => theme.color.transparent};
     border: none;
     padding: 20px;
-    color: ${({ theme }) => theme.color.teal};
+    color: ${({ theme }) => theme.color.main};
     transition: color 0.3s;
     cursor: pointer;
 
@@ -30,6 +30,6 @@ export const Button = styled.button`
     }
 
     &:disabled {
-        color: ${({ theme }) => theme.color.silver};
+        color: ${({ theme }) => theme.color.shadow};
     }
 `;

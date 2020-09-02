@@ -11,14 +11,14 @@ export const FormSheet = styled.form`
 `
 export const Input = styled.input`
     height: 55px;
-    border: 3px solid ${({ theme }) => theme.color.gallery};
+    border: 3px solid ${({ theme }) => theme.color.background};
     padding: 10px;
 `
 export const Button = styled.button`
     height: 55px;
     font-size: 20px;
-    background-color: ${({ theme }) => theme.color.teal};
-    color: ${({ theme }) => theme.color.white};
+    background-color: ${({ theme }) => theme.color.main};
+    color: ${({ theme }) => theme.color.second};
     border: none;
     padding: 15px;
     transition: background 0.3s, transform 0.3s;
