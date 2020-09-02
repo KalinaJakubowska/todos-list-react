@@ -13,7 +13,7 @@ export const Container = styled.div`
     display: grid;
     grid-template-columns: 1fr auto;
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         grid-template-columns: 1fr;
     }
 `;
