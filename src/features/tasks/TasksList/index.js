@@ -1,7 +1,15 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { List, Item, Content, Button } from "./styled.js";
+import { selectTasks, toggleTaskDone, deleteTask } from "../tasksSlice.js";
 
-const TasksList = ({ tasks, isHidingEnabled, deleteTask, toggleTaskDone }) => {
+const TasksList = () => {
+    const { tasks, isHidingEnabled } = useSelector(selectTasks);
+
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+
+    const dispatch = useDispatch();
+
     if (!tasks.length) {
         return (
             <p>
@@ -17,13 +25,13 @@ const TasksList = ({ tasks, isHidingEnabled, deleteTask, toggleTaskDone }) => {
                     key={id}
                     hidden={done && isHidingEnabled}
                 >
-                    <Button toggleDone onClick={() => toggleTaskDone(id)}>
+                    <Button toggleDone onClick={() => dispatch(toggleTaskDone(id))}>
                         {done ? "✔" : ""}
                     </Button>
                     <Content done={done}>
                         {name}
                     </Content>
-                    <Button remove onClick={() => deleteTask(id)}>
+                    <Button remove onClick={() => dispatch(deleteTask(id))}>
                         🗑
                     </Button>
                 </Item>
