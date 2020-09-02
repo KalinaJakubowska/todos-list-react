@@ -6,8 +6,6 @@ import { selectTasks, toggleTaskDone, deleteTask } from "../tasksSlice.js";
 const TasksList = () => {
     const { tasks, isHidingEnabled } = useSelector(selectTasks);
 
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-
     const dispatch = useDispatch();
 
     if (!tasks.length) {
