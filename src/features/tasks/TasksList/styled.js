@@ -18,6 +18,8 @@ export const Item = styled.li`
     `}
 `;
 export const Content = styled.span`
+    overflow-wrap: anywhere;
+
     ${({ done }) => done && css`
         text-decoration: line-through;
     `}
