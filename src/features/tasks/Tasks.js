@@ -6,7 +6,7 @@ import Section from "../../common/Section";
 import Header from "../../common/Header";
 import Container from "../../common/Container";
 
-function App() {
+const Tasks = () => {
 
   return (
     <Container>
@@ -27,4 +27,4 @@ function App() {
     </Container>
   );
 };
-export default App;
+export default Tasks;
