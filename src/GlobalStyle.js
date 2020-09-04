@@ -11,9 +11,10 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         font-family: 'Montserrat', sans-serif;
-        color: "${({ theme }) => theme.color.text}";
+        color: ${({ theme }) => theme.color.text};
         background-color: ${({ theme }) => theme.color.background};
         font-size: 16px;
         padding: 10px;
+        transition: 0.3s;
     }
 `;
