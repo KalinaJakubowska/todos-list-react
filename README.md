@@ -1,4 +1,4 @@
-https://kalinajakubowska.github.io/to-do-list-react/
+https://kalinajakubowska.github.io/todos-list-react/
 
 # TO-DO list
 
