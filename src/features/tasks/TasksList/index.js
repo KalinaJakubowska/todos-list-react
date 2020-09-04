@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { List, Item, Content, Button } from "./styled.js";
-import { selectTasks, toggleTaskDone, deleteTask } from "../tasksSlice.js";
+import { selectTasks, toggleTaskDone, deleteTask, editTask } from "../tasksSlice.js";
 
 const TasksList = () => {
     const { tasks, isHidingEnabled } = useSelector(selectTasks);
+    const [newTaskName, setNewTaskName] = useState("");
+    const [editableId, setEditableId] = useState(0);
 
     const dispatch = useDispatch();
 
@@ -14,7 +16,16 @@ const TasksList = () => {
                 Aktualnie nie masz żadnych zadań do wykonania. Ciesz się wolnym czasem :)
             </p>
         );
-    }
+    };
+
+    const onEditSave = (id, name) => {
+        dispatch(editTask({
+            name: newTaskName.trim() || name,
+            id,
+        }));
+
+        setEditableId(undefined);
+    };
 
     return (
         <List>
@@ -26,15 +37,35 @@ const TasksList = () => {
                     <Button toggleDone onClick={() => dispatch(toggleTaskDone(id))}>
                         {done ? "✔" : ""}
                     </Button>
-                    <Content done={done}>
-                        {name}
-                    </Content>
-                    <Button remove onClick={() => dispatch(deleteTask(id))}>
+
+                    {editableId === id
+                        ? (
+                            <label>
+                                <input value={newTaskName} onChange={({ target }) => setNewTaskName(target.value)} />
+
+                                <Button edit onClick={() => onEditSave(id, name)}>
+                                    Zapisz
+                                </Button>
+                            </label>
+                        )
+                        : (
+                            <>
+                                <Content done={done}>
+                                    {name}
+                                </Content>
+                                <Button onClick={() => setEditableId(id) || setNewTaskName(name)}>
+                                    ✏
+                                </Button>
+                            </>
+                        )
+                    }
+
+                    < Button remove onClick={() => dispatch(deleteTask(id))}>
                         🗑
-                    </Button>
+                    </Button >
                 </Item>
-            ))}
+            ))};
         </List>
     )
-}
+};
 export default TasksList;
