@@ -1,12 +1,13 @@
 export const theme = {
     color: {
-        main: "teal",
-        second: "#fff",
+        buttonBackground: "teal",
+        sectionBackground: "#fff",
         shadow: "#ccc",
         background: "#eee",
         transparent: "transparent",
         check: "green",
         remove: "red",
+        interactionButtonText: "#fff",
         text: "black",
     },
     breakpoint: {
@@ -17,13 +18,14 @@ export const theme = {
 
 export const darkTheme = {
     color: {
-        main: "#8DB9B9",
-        second: "#3C4453",
+        buttonBackground: "#8DB9B9",
+        sectionBackground: "#3C4453",
         shadow: "black",
         background: "#272A30",
         transparent: "transparent",
         check: "green",
         remove: "red",
+        interactionButtonText: "#fff",
         text: "#EBEDEF",
     },
     breakpoint: {

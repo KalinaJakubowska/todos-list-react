@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.section`
-    background: ${({ theme }) => theme.color.second};
+    background: ${({ theme }) => theme.color.sectionBackground};
     margin-bottom: 15px;
     box-shadow: 0 0 5px ${({ theme }) => theme.color.shadow};
 `;

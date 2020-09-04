@@ -13,7 +13,7 @@ export const Wrapper = styled.header`
 
 export const Button = styled.button`
     border: none;
-    background-color: ${({ theme }) => theme.color.second};
+    background-color: ${({ theme }) => theme.color.sectionBackground};
     color: ${({ theme }) => theme.color.text};
     box-shadow: 0 0 5px ${({ theme }) => theme.color.shadow};
     font-size: 1em;

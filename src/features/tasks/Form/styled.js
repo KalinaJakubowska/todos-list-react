@@ -18,15 +18,15 @@ export const Input = styled.input`
 export const Button = styled.button`
     height: 55px;
     font-size: 20px;
-    background-color: ${({ theme }) => theme.color.main};
-    color: ${({ theme }) => theme.color.second};
+    background-color: ${({ theme }) => theme.color.buttonBackground};
+    color: ${({ theme }) => theme.color.sectionBackground};
     border: none;
     padding: 15px;
     transition: background 0.3s, transform 0.3s;
     cursor: pointer;
 
     &:hover {
-        background-color: hsl(180, 100%, 35%);
+        filter: brightness(120%);
         transform: scale(1.1);
     }
 `

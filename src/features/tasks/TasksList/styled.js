@@ -29,7 +29,7 @@ export const Button = styled.button`
     height: 30px;
     border: none;
     transition: background 0.3s;
-    color: ${({ theme }) => theme.color.second};
+    color: ${({ theme }) => theme.color.interactionButtonText};
     font-size: 22px;
     padding: 0px;
     cursor: pointer;
