@@ -13,7 +13,7 @@ export const Button = styled.button`
     border: none;
     padding: 20px;
     color: ${({ theme }) => theme.color.buttonBackground};
-    transition: color 0.3s;
+    transition: 0.3s;
     cursor: pointer;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
