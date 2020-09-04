@@ -11,6 +11,7 @@ export const theme = {
     },
     breakpoint: {
         mobileMax: 767,
+        mini: 375,
     },
 }
 
@@ -27,5 +28,6 @@ export const darkTheme = {
     },
     breakpoint: {
         mobileMax: 767,
+        mini: 375,
     },
 }
