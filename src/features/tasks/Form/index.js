@@ -17,14 +17,18 @@ const Form = () => {
     const onFormSubmit = (event) => {
         event.preventDefault();
 
+        focusInput();
+
+        if (!newTaskName.trim()) {
+            return 0;
+        }
+
         dispatch(addTask({
             name: newTaskName.trim(),
             done: false,
             id: nanoid(),
         }));
-
         setNewTaskName("");
-        focusInput();
     }
 
     return (
