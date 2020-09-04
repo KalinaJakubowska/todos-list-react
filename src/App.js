@@ -1,19 +1,19 @@
 import React from "react";
-import { Provider } from "react-redux";
-import store from "./store";
 import { ThemeProvider } from "styled-components";
-import { theme } from "./theme.js";
+import { theme, darkTheme } from "./theme.js";
 import { GlobalStyle } from "./GlobalStyle";
 import Tasks from "./features/tasks/Tasks";
+import { useSelector } from "react-redux";
+import { selectTheme } from "./themeSlice.js";
 
 const App = () => {
+    const isDarkTheme = useSelector(selectTheme);
 
     return (
-        <Provider store={store}>
-            <ThemeProvider theme={theme}>
-                <GlobalStyle />
-                < Tasks />
-            </ThemeProvider>
-        </Provider>)
+        <ThemeProvider theme={isDarkTheme ? darkTheme : theme}>
+            <GlobalStyle />
+            < Tasks />
+        </ThemeProvider>
+    )
 };
 export default App;
