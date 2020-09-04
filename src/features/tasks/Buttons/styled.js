@@ -12,7 +12,7 @@ export const Button = styled.button`
     background-color: ${({ theme }) => theme.color.transparent};
     border: none;
     padding: 20px;
-    color: ${({ theme }) => theme.color.main};
+    color: ${({ theme }) => theme.color.buttonBackground};
     transition: color 0.3s;
     cursor: pointer;
 
@@ -21,14 +21,16 @@ export const Button = styled.button`
     }
 
     &:hover {
-        color: hsl(180, 100%, 35%);
+        filter: brightness(120%);
     }
 
     &:active {
-        color: hsl(180, 100%, 45%);
+        filter: brightness(140%);
     }
 
     &:disabled {
         color: ${({ theme }) => theme.color.shadow};
+        cursor: unset;
+        filter: none;
     }
 `;
