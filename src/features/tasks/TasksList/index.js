@@ -40,13 +40,12 @@ const TasksList = () => {
 
                     {editableId === id
                         ? (
-                            <label>
+                            <>
                                 <input value={newTaskName} onChange={({ target }) => setNewTaskName(target.value)} />
-
                                 <Button edit onClick={() => onEditSave(id, name)}>
                                     Zapisz
                                 </Button>
-                            </label>
+                            </>
                         )
                         : (
                             <>
@@ -64,7 +63,7 @@ const TasksList = () => {
                         🗑
                     </Button >
                 </Item>
-            ))};
+            ))}
         </List>
     )
 };
