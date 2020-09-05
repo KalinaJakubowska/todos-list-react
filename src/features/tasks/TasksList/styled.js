@@ -8,7 +8,7 @@ export const List = styled.ul`
 export const Item = styled.li`
     border-bottom: 3px solid ${({ theme }) => theme.color.background};
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr auto auto;
     grid-gap: 10px;
     padding: 10px;
     align-items: center;
