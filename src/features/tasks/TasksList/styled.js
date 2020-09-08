@@ -8,7 +8,7 @@ export const List = styled.ul`
 export const Item = styled.li`
     border-bottom: 3px solid ${({ theme }) => theme.color.background};
     display: grid;
-    grid-template-columns: auto 1fr auto auto;
+    grid-template-columns: auto 1fr auto ;
     grid-gap: 10px;
     padding: 10px;
     align-items: center;
@@ -28,7 +28,7 @@ export const Button = styled.button`
     width: 30px;
     height: 30px;
     border: none;
-    transition: background 0.3s;
+    transition: 0.3s;
     color: ${({ theme }) => theme.color.interactionButtonText};
     font-size: 22px;
     padding: 0px;
@@ -36,22 +36,33 @@ export const Button = styled.button`
 
     ${({ toggleDone }) => toggleDone && css`
         background-color: ${({ theme }) => theme.color.check};
-
-        &:hover {
-            background-color: hsl(120, 100%, 35%);
-        }
-        &:active {
-            background-color: hsl(120, 100%, 45%);
-        }
+    `}
+    ${({ edit }) => edit && css`
+        background-color: ${({ theme }) => theme.color.edit};
+    `}
+    ${({ save }) => save && css`
+        background-color: ${({ theme }) => theme.color.edit};
+        font-size: unset;
+        width: unset;
+        padding: 0px 10px;
     `}
     ${({ remove }) => remove && css`
         background-color: ${({ theme }) => theme.color.remove};
-
-        &:hover {
-            background-color: hsl(0, 100%, 65%);
-        }
-        &:active {
-            background-color: hsl(0, 100%, 75%);
-        }
     `}
+
+    &:hover {
+        filter: brightness(120%);
+    }
+    &:active {
+        filter: brightness(140%);
+    }
+`
+export const EditableContent = styled.div`
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 10px;
+    align-items: center;
+`
+export const ContentInput = styled.input`
+    width: 100%;
 `

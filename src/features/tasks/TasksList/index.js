@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { List, Item, Content, Button } from "./styled.js";
+import { List, Item, Content, Button, EditableContent, ContentInput } from "./styled.js";
 import { selectTasks, toggleTaskDone, deleteTask, editTask } from "../tasksSlice.js";
 
 const TasksList = () => {
@@ -40,22 +40,22 @@ const TasksList = () => {
 
                     {editableId === id
                         ? (
-                            <>
-                                <input value={newTaskName} onChange={({ target }) => setNewTaskName(target.value)} />
-                                <Button edit onClick={() => onEditSave(id, name)}>
+                            <EditableContent as="form">
+                                <ContentInput value={newTaskName} onChange={({ target }) => setNewTaskName(target.value)} />
+                                <Button save onClick={() => onEditSave(id, name)}>
                                     Zapisz
                                 </Button>
-                            </>
+                            </EditableContent>
                         )
                         : (
-                            <>
+                            <EditableContent>
                                 <Content done={done}>
                                     {name}
                                 </Content>
-                                <Button onClick={() => setEditableId(id) || setNewTaskName(name)}>
+                                <Button edit onClick={() => setEditableId(id) || setNewTaskName(name)}>
                                     ✏
                                 </Button>
-                            </>
+                            </EditableContent>
                         )
                     }
 
