@@ -8,8 +8,9 @@ export const GlobalStyle = createGlobalStyle`
     *, ::before, ::after {
         box-sizing: inherit;
     }
+
     :focus {
-    outline: 2px solid ${({ theme }) => theme.color.outline};
+        outline: 2px solid ${({ theme }) => theme.color.outline};
     }
 
     body {
