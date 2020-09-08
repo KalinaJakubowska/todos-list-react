@@ -65,4 +65,8 @@ export const EditableContent = styled.div`
 `
 export const ContentInput = styled.input`
     width: 100%;
+    padding: 5px;
+    border: 1px solid ${({ theme }) => theme.color.shadow};
+    background-color: ${({ theme }) => theme.color.background};
+    color: ${({ theme }) => theme.color.text};
 `
