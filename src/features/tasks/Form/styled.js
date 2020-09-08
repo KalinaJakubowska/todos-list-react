@@ -15,6 +15,7 @@ export const Input = styled.input`
     padding: 10px;
     background-color: ${({ theme }) => theme.color.background};
     color: ${({ theme }) => theme.color.text};
+    border: 1px solid ${({ theme }) => theme.color.shadow};
 `
 export const Button = styled.button`
     height: 55px;
