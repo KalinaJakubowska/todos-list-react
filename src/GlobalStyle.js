@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
     html {
         box-sizing: border-box;
+        background-color: ${({ theme }) => theme.color.background};
     }
 
     *, ::before, ::after {
@@ -16,9 +17,9 @@ export const GlobalStyle = createGlobalStyle`
     body {
         font-family: 'Montserrat', sans-serif;
         color: ${({ theme }) => theme.color.text};
-        background-color: ${({ theme }) => theme.color.background};
         font-size: 16px;
         padding: 10px;
-        transition: 0.3s;
+        background-color: ${({ theme }) => theme.color.background};
+        transition: background 0.3s;
     }
 `;
