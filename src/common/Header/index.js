@@ -1,10 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleTheme, selectTheme } from "../../themeSlice";
+import { toggleTheme, selectDarkTheme } from "../../themeSlice";
 import { Wrapper, Button } from "./styled";
 
 const Header = ({ title }) => {
-    const isDarkTheme = useSelector(selectTheme);
+    const isDarkTheme = useSelector(selectDarkTheme);
     const dispatch = useDispatch();
     return (
         <Wrapper>
