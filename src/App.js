@@ -4,7 +4,7 @@ import { theme, darkTheme } from "./theme.js";
 import { GlobalStyle } from "./GlobalStyle";
 import Tasks from "./features/tasks/Tasks";
 import { useSelector } from "react-redux";
-import { selectDarkTheme } from "./themeSlice.js";
+import { selectDarkTheme } from "./common/themeSlice";
 
 const App = () => {
     const isDarkTheme = useSelector(selectDarkTheme);
