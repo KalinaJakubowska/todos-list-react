@@ -21,5 +21,6 @@ export const GlobalStyle = createGlobalStyle`
         padding: 10px;
         background-color: ${({ theme }) => theme.color.background};
         transition: background 0.3s;
+        height: 100vh;
     }
 `;
