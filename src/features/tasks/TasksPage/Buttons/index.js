@@ -4,13 +4,15 @@ import { ButtonsContainer} from "./styled";
 import { Button } from "./../styled";
 import {
     selectTasks,
+    selectIsHidingEnabled,
     toggleIsHidingEnabled,
     doAllTasks,
     removeAllTasks,
 } from "./../../tasksSlice";
 
 const Buttons = () => {
-    const { tasks, isHidingEnabled } = useSelector(selectTasks);
+    const tasks = useSelector(selectTasks);
+    const isHidingEnabled = useSelector(selectIsHidingEnabled);
     const dispatch = useDispatch();
 
     return (

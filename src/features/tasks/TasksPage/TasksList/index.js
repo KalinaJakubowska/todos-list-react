@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { List, Item, Content, Button, EditableContent, ContentInput } from "./styled.js";
-import { selectTasks, toggleTaskDone, deleteTask, editTask } from "../../tasksSlice.js";
+import {
+    selectTasks,
+    selectIsHidingEnabled,
+    toggleTaskDone,
+    deleteTask,
+    editTask
+} from "../../tasksSlice.js";
 import { Link } from "react-router-dom";
 
 const TasksList = () => {
-    const { tasks, isHidingEnabled } = useSelector(selectTasks);
+    const tasks = useSelector(selectTasks);
+    const isHidingEnabled = useSelector(selectIsHidingEnabled);
     const [newTaskName, setNewTaskName] = useState("");
     const [editableId, setEditableId] = useState(0);
 

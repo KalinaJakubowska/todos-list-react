@@ -55,10 +55,11 @@ export const {
     setTasks,
     setExampleTasksLoading,
 } = tasksSlice.actions;
-export const selectTasks = state => state.tasks;
+export const selectTasks = state => state.tasks.tasks;
+export const selectIsHidingEnabled = state => state.tasks.isHidingEnabled;
 export const selectExampleTasksLoading = state => state.tasks.exampleTasksLoading;
 export const getTaskById = (state, taskId) => {
-    return selectTasks(state).tasks.find(({ id }) => id === taskId);
+    return selectTasks(state).find(({ id }) => id === taskId);
 };
 
 export default tasksSlice.reducer;
