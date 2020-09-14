@@ -17,7 +17,6 @@ const store = configureStore({
 sagaMiddleware.run(rootSaga);
 
 store.subscribe(() => {
-    localStorage.setItem("tasks", JSON.stringify(store.getState().tasks.tasks));
     localStorage.setItem("theme", JSON.stringify(store.getState().theme.darkTheme));
 });
 
