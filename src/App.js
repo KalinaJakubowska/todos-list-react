@@ -6,8 +6,9 @@ import TasksPage from "./features/tasks/TasksPage";
 import TaskPage from "./features/tasks/TaskPage";
 import { useSelector } from "react-redux";
 import { selectDarkTheme } from "./common/themeSlice";
-import { HashRouter, Link, Switch, Route, Redirect } from "react-router-dom";
-import AuthorPage from "./features/author/AuthorPage"
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
+import AuthorPage from "./features/author/AuthorPage";
+import { StyledNavLink, Nav, NavItem } from "./styled.js";
 const App = () => {
     const isDarkTheme = useSelector(selectDarkTheme);
 
@@ -16,18 +17,18 @@ const App = () => {
             <GlobalStyle />
             <HashRouter>
                 <nav>
-                    <ul>
-                        <li>
-                            <Link to="/zadania">
+                    <Nav>
+                        <NavItem>
+                            <StyledNavLink to="/zadania">
                                 Zadania
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/o-autorze">
+                            </StyledNavLink>
+                        </NavItem>
+                        <NavItem>
+                            <StyledNavLink to="/o-autorze">
                                 O autorze
-                            </Link>
-                        </li>
-                    </ul>
+                            </StyledNavLink>
+                        </NavItem>
+                    </Nav>
                     <Switch>
                         <Route path="/zadania/:id">
                             <TaskPage />
