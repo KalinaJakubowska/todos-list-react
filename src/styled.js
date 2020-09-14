@@ -23,6 +23,11 @@ export const Nav = styled.ul`
     justify-content: center;
     margin: 0 auto;
     padding: 0;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mini}px) {
+        flex-direction: column;
+        align-items: center
+    }
 `
 export const NavItem = styled.li`
     list-style: none;
