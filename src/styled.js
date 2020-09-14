@@ -18,7 +18,7 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
     `
 export const Nav = styled.ul`
     background-color: ${({ theme }) => theme.color.buttonBackground};
-    width: 1100px;
+    max-width: 1100px;
     display: flex;
     justify-content: center;
     margin: 0 auto;
