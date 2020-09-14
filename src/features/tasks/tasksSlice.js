@@ -26,9 +26,15 @@ const tasksSlice = createSlice({
         toggleIsHidingEnabled: state => {
             state.isHidingEnabled = !state.isHidingEnabled;
         },
-        editTask: ({ tasks }, { payload: {id, name} }) => {
+        editTask: ({ tasks }, { payload: { id, name } }) => {
             const index = tasks.findIndex(task => task.id === id);
             tasks[index].name = name;
+        },
+        fetchExampleTasks: () => {
+            console.log("x")
+        },
+        setTasks: (state, { payload: tasks }) => {
+            state.tasks = tasks;
         },
     },
 });
@@ -41,6 +47,8 @@ export const {
     doAllTasks,
     removeAllTasks,
     editTask,
+    fetchExampleTasks,
+    setTasks,
 } = tasksSlice.actions;
 export const selectTasks = state => state.tasks;
 export default tasksSlice.reducer;
