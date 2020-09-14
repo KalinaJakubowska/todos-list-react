@@ -9,14 +9,6 @@ export const FormSheet = styled.form`
         grid-template-columns: 1fr;
     }
 `
-export const Input = styled.input`
-    height: 55px;
-    border: 3px solid ${({ theme }) => theme.color.background};
-    padding: 10px;
-    background-color: ${({ theme }) => theme.color.background};
-    color: ${({ theme }) => theme.color.text};
-    border: 1px solid ${({ theme }) => theme.color.shadow};
-`
 export const Button = styled.button`
     height: 55px;
     font-size: 20px;
