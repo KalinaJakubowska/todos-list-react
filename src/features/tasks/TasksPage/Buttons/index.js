@@ -7,7 +7,7 @@ import {
     toggleIsHidingEnabled,
     doAllTasks,
     removeAllTasks,
-} from "../tasksSlice";
+} from "./../../tasksSlice";
 
 const Buttons = () => {
     const { tasks, isHidingEnabled } = useSelector(selectTasks);

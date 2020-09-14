@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { List, Item, Content, Button, EditableContent, ContentInput } from "./styled.js";
-import { selectTasks, toggleTaskDone, deleteTask, editTask } from "../tasksSlice.js";
+import { selectTasks, toggleTaskDone, deleteTask, editTask } from "../../tasksSlice.js";
+import { Link } from "react-router-dom";
 
 const TasksList = () => {
     const { tasks, isHidingEnabled } = useSelector(selectTasks);
@@ -50,7 +51,7 @@ const TasksList = () => {
                         : (
                             <EditableContent>
                                 <Content done={done}>
-                                    {name}
+                                    <Link to={`/zadania/${id}`}>{name}</Link>
                                 </Content>
                                 <Button edit onClick={() => setEditableId(id) || setNewTaskName(name)}>
                                     ✏
