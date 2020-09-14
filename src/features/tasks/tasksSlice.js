@@ -7,6 +7,7 @@ const tasksSlice = createSlice({
         tasks: getTasksFromLocalStorage(),
         isHidingEnabled: false,
         exampleTasksLoading: false,
+        query: "",
     },
     reducers: {
         addTask: ({ tasks }, { payload }) => {
@@ -40,6 +41,9 @@ const tasksSlice = createSlice({
         setExampleTasksLoading: (state, { payload }) => {
             state.exampleTasksLoading = payload;
         },
+        setQuery: (state, { payload: query }) => {
+            state.query = query;
+        }
     },
 });
 
@@ -54,6 +58,7 @@ export const {
     fetchExampleTasks,
     setTasks,
     setExampleTasksLoading,
+    setQuery,
 } = tasksSlice.actions;
 export const selectTasks = state => state.tasks.tasks;
 export const selectIsHidingEnabled = state => state.tasks.isHidingEnabled;
@@ -61,5 +66,15 @@ export const selectExampleTasksLoading = state => state.tasks.exampleTasksLoadin
 export const getTaskById = (state, taskId) => {
     return selectTasks(state).find(({ id }) => id === taskId);
 };
+export const selectQuery = state => state.tasks.query;
+export const selectTasksByQuery = (state, query) => {
+    if (!query || query.trim() === "") {
+        return selectTasks(state);
+    }
+
+    return selectTasks(state).filter(
+        ({ name }) => name.toLowerCase().includes(query.trim().toLowerCase())
+    );
+}
 
 export default tasksSlice.reducer;

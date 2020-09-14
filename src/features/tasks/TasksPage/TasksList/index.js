@@ -2,16 +2,18 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { List, Item, Content, Button, EditableContent, ContentInput } from "./styled.js";
 import {
-    selectTasks,
+    selectTasksByQuery,
     selectIsHidingEnabled,
     toggleTaskDone,
     deleteTask,
-    editTask
+    editTask,
+    selectQuery,
 } from "../../tasksSlice.js";
 import { Link } from "react-router-dom";
 
 const TasksList = () => {
-    const tasks = useSelector(selectTasks);
+    const query = useSelector(selectQuery);
+    const tasks = useSelector(state => selectTasksByQuery(state, query));
     const isHidingEnabled = useSelector(selectIsHidingEnabled);
     const [newTaskName, setNewTaskName] = useState("");
     const [editableId, setEditableId] = useState(0);
@@ -21,7 +23,10 @@ const TasksList = () => {
     if (!tasks.length) {
         return (
             <p>
-                Aktualnie nie masz żadnych zadań do wykonania. Ciesz się wolnym czasem :)
+                {query
+                    ? "Brak pasujących zadań."
+                    : "Aktualnie nie masz żadnych zadań do wykonania. Ciesz się wolnym czasem :)"
+                }
             </p>
         );
     };
