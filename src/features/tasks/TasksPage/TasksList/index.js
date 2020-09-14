@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { List, Item, Content, Button, EditableContent, ContentInput } from "./styled.js";
+import {
+    List,
+    Item,
+    Content,
+    Button,
+    EditableContent,
+    ContentInput,
+    StyledLink
+} from "./styled.js";
 import {
     selectTasksByQuery,
     selectIsHidingEnabled,
@@ -9,7 +17,6 @@ import {
     editTask,
     selectQuery,
 } from "../../tasksSlice.js";
-import { Link } from "react-router-dom";
 
 const TasksList = () => {
     const query = useSelector(selectQuery);
@@ -63,7 +70,7 @@ const TasksList = () => {
                         : (
                             <EditableContent>
                                 <Content done={done}>
-                                    <Link to={`/zadania/${id}`}>{name}</Link>
+                                    <StyledLink to={`/zadania/${id}`}>{name}</StyledLink>
                                 </Content>
                                 <Button edit onClick={() => setEditableId(id) || setNewTaskName(name)}>
                                     ✏

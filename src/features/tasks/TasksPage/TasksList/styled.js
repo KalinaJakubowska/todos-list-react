@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 
 export const List = styled.ul`
     list-style-type: none;
@@ -56,17 +57,29 @@ export const Button = styled.button`
     &:active {
         filter: brightness(140%);
     }
-`
+`;
 export const EditableContent = styled.div`
     display: grid;
     grid-template-columns: 1fr auto;
     grid-gap: 10px;
     align-items: center;
-`
+`;
 export const ContentInput = styled.input`
     width: 100%;
     padding: 5px;
     border: 1px solid ${({ theme }) => theme.color.shadow};
     background-color: ${({ theme }) => theme.color.background};
     color: ${({ theme }) => theme.color.text};
-`
+`;
+export const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: ${({ theme }) => theme.color.buttonBackground};
+    transition: 0.3s;
+
+    &:hover {
+        filter: brightness(120%);
+    }
+    &:active {
+        filter: brightness(140%);
+    }
+`;
