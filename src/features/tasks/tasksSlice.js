@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getTasksFromLocalStorage } from "./tasksLocalStorage";
+import { nanoid } from "@reduxjs/toolkit";
 
 const tasksSlice = createSlice({
     name: "tasks",
@@ -10,8 +11,11 @@ const tasksSlice = createSlice({
         query: "",
     },
     reducers: {
-        addTask: ({ tasks }, { payload }) => {
-            tasks.push(payload);
+        addTasks: ({ tasks }, { payload }) => {
+            payload.forEach(task => tasks.push({
+                ...task,
+                id: nanoid(),
+            }));
         },
         toggleTaskDone: ({ tasks }, { payload }) => {
             const index = tasks.findIndex(task => task.id === payload);
@@ -35,20 +39,17 @@ const tasksSlice = createSlice({
         },
         fetchExampleTasks: () => {
         },
-        setTasks: (state, { payload: tasks }) => {
-            state.tasks = tasks;
-        },
         setExampleTasksLoading: (state, { payload }) => {
             state.exampleTasksLoading = payload;
         },
         setQuery: (state, { payload: query }) => {
             state.query = query;
-        }
+        },
     },
 });
 
 export const {
-    addTask,
+    addTasks,
     toggleIsHidingEnabled,
     toggleTaskDone,
     deleteTask,
@@ -56,7 +57,6 @@ export const {
     removeAllTasks,
     editTask,
     fetchExampleTasks,
-    setTasks,
     setExampleTasksLoading,
     setQuery,
 } = tasksSlice.actions;
@@ -75,6 +75,6 @@ export const selectTasksByQuery = (state, query) => {
     return selectTasks(state).filter(
         ({ name }) => name.toLowerCase().includes(query.trim().toLowerCase())
     );
-}
+};
 
 export default tasksSlice.reducer;
