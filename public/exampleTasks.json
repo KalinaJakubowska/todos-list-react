@@ -1,17 +1,14 @@
 [
     {
         "name": "Pomiziać koty",
-        "done": false,
-        "id": "2kUylrUlj-pvcVzMXodWV"
+        "done": false
     },
     {
         "name": "Nauczyć się szybciej biegać...",
-        "done": false,
-        "id": "a-h7a5ySJQLHFK1UthybQ"
+        "done": false
     },
     {
         "name": "...żeby dogonić i pomiziać więcej kotów. Just do it!",
-        "done": false,
-        "id": "a-h7a5ySJQLHFK1bghybQ"
+        "done": false
     }
 ]
