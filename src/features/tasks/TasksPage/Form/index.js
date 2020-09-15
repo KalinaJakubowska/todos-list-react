@@ -1,8 +1,7 @@
 import React, { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
-import { nanoid } from "@reduxjs/toolkit";
 import { FormSheet, Button } from "./styled"
-import { addTask } from "./../../tasksSlice";
+import { addTasks } from "./../../tasksSlice";
 import Input from "../../Input";
 
 const Form = () => {
@@ -24,10 +23,9 @@ const Form = () => {
             return 0;
         }
 
-        dispatch(addTask({
+        dispatch(addTasks({
             name: newTaskName.trim(),
             done: false,
-            id: nanoid(),
         }));
         setNewTaskName("");
     }
