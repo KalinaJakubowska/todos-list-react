@@ -14,7 +14,10 @@ Project for YouCode Academy.
 - CSS
 - JS
 - React
-- Redux (react-redux, @reduxjs/toolkit)
+- react-router-dom
+- react-redux
+- @reduxjs/toolkit
+- redux-saga
 - JSX
 - styled-components
 - create-react-app
