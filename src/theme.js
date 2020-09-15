@@ -20,7 +20,7 @@ export const theme = {
 
 export const darkTheme = { ... theme,
     color: {
-        buttonBackground: "#8DB9B9",
+        buttonBackground: "#6CAAE0",
         sectionBackground: "#3C4453",
         shadow: "black",
         background: "#272A30",
