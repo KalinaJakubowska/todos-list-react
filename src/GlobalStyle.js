@@ -18,7 +18,6 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Montserrat', sans-serif;
         color: ${({ theme }) => theme.color.text};
         font-size: 16px;
-        padding: 10px;
         background-color: ${({ theme }) => theme.color.background};
         transition: background 0.3s;
         height: 100vh;
