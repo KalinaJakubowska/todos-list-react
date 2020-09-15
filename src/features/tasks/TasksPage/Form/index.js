@@ -23,10 +23,12 @@ const Form = () => {
             return 0;
         }
 
-        dispatch(addTasks({
-            name: newTaskName.trim(),
-            done: false,
-        }));
+        dispatch(addTasks([
+            {
+                name: newTaskName.trim(),
+                done: false,
+            },
+        ]));
         setNewTaskName("");
     }
 
