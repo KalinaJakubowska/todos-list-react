@@ -18,7 +18,7 @@ export const theme = {
     },
 }
 
-export const darkTheme = {
+export const darkTheme = { ... theme,
     color: {
         buttonBackground: "#8DB9B9",
         sectionBackground: "#3C4453",
@@ -31,9 +31,5 @@ export const darkTheme = {
         outline: "grey",
         interactionButtonText: "#fff",
         text: "#EBEDEF",
-    },
-    breakpoint: {
-        mobileMax: 767,
-        mini: 375,
     },
 }
