@@ -10,7 +10,9 @@ const AuthorPage = () => {
       <Header title="O Autorze" />
       <Section
         title="Kalina Jakubowska"
-        body="Hej"
+        body="Hej! Jak zapewne się domyślasz, lubię miziać koty.
+        Nie lubię za to pisać o sobie, także ten... miłego dnia!
+        A jeżeli masz jakiegoś kota pod ręką - wiesz co robić 😁"
       />
     </Container>
   );
