@@ -7,6 +7,7 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
     activeClassName,
 }))`
         font-size: 20px;
+        font-weight: bold;
         text-decoration: none;
         background-color: ${({ theme }) => theme.color.buttonBackground};
         color: ${({ theme }) => theme.color.sectionBackground};
