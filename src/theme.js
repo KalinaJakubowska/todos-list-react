@@ -18,7 +18,8 @@ export const theme = {
     },
 }
 
-export const darkTheme = { ... theme,
+export const darkTheme = {
+    ...theme,
     color: {
         buttonBackground: "#6CAAE0",
         sectionBackground: "#3C4453",
