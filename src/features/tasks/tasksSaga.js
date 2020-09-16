@@ -22,7 +22,7 @@ function* saveTasksInLocalStorageHandler() {
 }
 
 export function* watchFetchExampleTasks() {
-    yield takeEvery(fetchExampleTasks.type, fetchExampleTasksHandler);
+    yield takeLatest(fetchExampleTasks.type, fetchExampleTasksHandler);
 };
 
 export function* watchAllActions() {
