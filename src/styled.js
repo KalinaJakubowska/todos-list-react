@@ -21,7 +21,7 @@ export const Navigation = styled.ul`
     background-color: ${({ theme }) => theme.color.buttonBackground};
     display: flex;
     justify-content: center;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mini}px) {
