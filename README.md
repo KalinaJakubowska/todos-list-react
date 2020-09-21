@@ -5,9 +5,14 @@ https://kalinajakubowska.github.io/todos-list-react/
 Project for YouCode Academy.
 
 ## Example usage
+
 ![Example usage gif](https://github.com/KalinaJakubowska/todos-list-react/blob/master/images/exampleUsage.gif?raw=true)
 
+## Change of theme
+
 ![Example theme changing gif](https://github.com/KalinaJakubowska/todos-list-react/blob/master/images/exampleThemeChange.gif?raw=true)
+
+## Single task view
 
 ![Single task view](https://github.com/KalinaJakubowska/todos-list-react/blob/master/images/exampleSingleTaskView.PNG?raw=true)
 
