@@ -9,9 +9,9 @@ function* fetchExampleTasksHandler() {
         yield delay(1000);
         const exampleTasks = yield call(getExampleTasks);
         yield put(addTasks(exampleTasks));
-        yield put(setExampleTasksLoading(false));
     } catch (error) {
         yield call(alert, "Coś poszło nie tak!");
+    } finally {
         yield put(setExampleTasksLoading(false));
     }
 };
