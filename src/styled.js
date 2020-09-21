@@ -21,6 +21,7 @@ export const Navigation = styled.ul`
     background-color: ${({ theme }) => theme.color.buttonBackground};
     display: flex;
     justify-content: center;
+    list-style: none;
     margin: 0;
     padding: 0;
 
@@ -30,6 +31,5 @@ export const Navigation = styled.ul`
     }
 `
 export const NavItem = styled.li`
-    list-style: none;
     padding: 20px;
 `
