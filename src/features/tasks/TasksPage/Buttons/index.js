@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ButtonsContainer} from "./styled";
-import { Button } from "./../styled";
+import { Button } from "../../Button";
 import {
     selectTasks,
     selectIsHidingEnabled,
