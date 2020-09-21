@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getTasksFromLocalStorage } from "./tasksLocalStorage";
-import { nanoid } from "@reduxjs/toolkit";
 
 const tasksSlice = createSlice({
     name: "tasks",
@@ -12,10 +11,7 @@ const tasksSlice = createSlice({
     },
     reducers: {
         addTasks: ({ tasks }, { payload }) => {
-            payload.forEach(task => tasks.push({
-                ...task,
-                id: nanoid(),
-            }));
+            payload.forEach(task => tasks.push(task));
         },
         toggleTaskDone: ({ tasks }, { payload }) => {
             const index = tasks.findIndex(task => task.id === payload);
