@@ -25,6 +25,6 @@ export function* watchFetchExampleTasks() {
     yield takeLatest(fetchExampleTasks.type, fetchExampleTasksHandler);
 };
 
-export function* watchAllActions() {
+export function* watchEveryStateChange() {
     yield takeEvery("*", saveTasksInLocalStorageHandler);
 };
