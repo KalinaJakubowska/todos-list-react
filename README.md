@@ -5,23 +5,25 @@ https://kalinajakubowska.github.io/todos-list-react/
 Project for YouCode Academy.
 
 ## Example usage
-![Example usage gif](https://github.com/KalinaJakubowska/todos-list-react/blob/master/public/images/use-example.gif?raw=true)
+![Example usage gif](https://github.com/KalinaJakubowska/todos-list-react/blob/master/images/exampleUsage.gif?raw=true)
 
-![Example theme changing gif](https://github.com/KalinaJakubowska/todos-list-react/blob/master/public/images/theme-example.gif?raw=true)
+![Example theme changing gif](https://github.com/KalinaJakubowska/todos-list-react/blob/master/images/exampleThemeChange.gif?raw=true)
+
+![Single task view](https://github.com/KalinaJakubowska/todos-list-react/blob/master/images/exampleSingleTaskView.PNG?raw=true)
 
 ## Technologies & Methodologies:
 - HTML
 - CSS
 - JS
 - React
-- react-router-dom
-- react-redux
-- @reduxjs/toolkit
-- redux-saga
+- React Router
+- React Redux
+- Redux Toolkit
+- Redux Saga
+- Styled Components
 - JSX
-- styled-components
 - create-react-app
-- local storage
+- localStorage
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
