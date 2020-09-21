@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import { selectDarkTheme } from "./common/themeSlice";
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import AuthorPage from "./features/author/AuthorPage";
-import { StyledNavLink, Nav, NavItem } from "./styled.js";
+import { StyledNavLink, Navigation, NavItem } from "./styled.js";
 const App = () => {
     const isDarkTheme = useSelector(selectDarkTheme);
 
@@ -17,7 +17,7 @@ const App = () => {
             <GlobalStyle />
             <HashRouter>
                 <nav>
-                    <Nav>
+                    <Navigation>
                         <NavItem>
                             <StyledNavLink to="/zadania">
                                 Zadania
@@ -28,7 +28,7 @@ const App = () => {
                                 O autorze
                             </StyledNavLink>
                         </NavItem>
-                    </Nav>
+                    </Navigation>
                     <Switch>
                         <Route path="/zadania/:id">
                             <TaskPage />

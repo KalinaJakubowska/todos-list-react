@@ -17,7 +17,7 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
             filter: brightness(90%);
         }
     `
-export const Nav = styled.ul`
+export const Navigation = styled.ul`
     background-color: ${({ theme }) => theme.color.buttonBackground};
     display: flex;
     justify-content: center;
