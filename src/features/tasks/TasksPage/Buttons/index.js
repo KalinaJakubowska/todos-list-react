@@ -8,15 +8,15 @@ import {
     toggleIsHidingEnabled,
     doAllTasks,
     removeAllTasks,
-    isAllTasksDone,
-    isAllTasksUndone,
+    areAllTasksDone,
+    areAllTasksUndone,
 } from "./../../tasksSlice";
 
 const Buttons = () => {
     const tasks = useSelector(selectTasks);
     const isHidingEnabled = useSelector(selectIsHidingEnabled);
-    const isAllDone = useSelector(isAllTasksDone);
-    const isAllUndone = useSelector(isAllTasksUndone);
+    const isAllDone = useSelector(areAllTasksDone);
+    const isAllUndone = useSelector(areAllTasksUndone);
     const dispatch = useDispatch();
 
     return (

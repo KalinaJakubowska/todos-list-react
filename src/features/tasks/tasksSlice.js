@@ -71,10 +71,10 @@ export const selectTasksByQuery = (state, query) => {
         ({ name }) => name.toLowerCase().includes(query.trim().toLowerCase())
     );
 };
-export const isAllTasksDone = ({ tasks }) => {
+export const areAllTasksDone = ({ tasks }) => {
     return tasks.tasks.every(({ done }) => done);
 };
-export const isAllTasksUndone = ({ tasks }) => {
+export const areAllTasksUndone = ({ tasks }) => {
     return tasks.tasks.every(({ done }) => !done);
 };
 
