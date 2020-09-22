@@ -47,6 +47,11 @@ const TasksList = () => {
         setEditableId(undefined);
     };
 
+    const onEditButtonClick = (id, name) => {
+        setEditableId(id);
+        setNewTaskName(name)
+    };
+
     return (
         <List>
             {tasks.map(({ id, name, done }) => (
@@ -72,7 +77,7 @@ const TasksList = () => {
                                 <Content done={done}>
                                     <StyledLink to={`/zadania/${id}`}>{name}</StyledLink>
                                 </Content>
-                                <Button edit onClick={() => setEditableId(id) || setNewTaskName(name)}>
+                                <Button edit onClick={() => onEditButtonClick(id, name)}>
                                     ✏
                                 </Button>
                             </EditableContent>
