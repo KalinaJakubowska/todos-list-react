@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { ButtonsContainer} from "./styled";
+import { ButtonsContainer } from "./styled";
 import { Button } from "../../Button";
 import {
     selectTasks,
@@ -8,11 +8,15 @@ import {
     toggleIsHidingEnabled,
     doAllTasks,
     removeAllTasks,
+    isAllTasksDone,
+    isAllTasksUndone,
 } from "./../../tasksSlice";
 
 const Buttons = () => {
     const tasks = useSelector(selectTasks);
     const isHidingEnabled = useSelector(selectIsHidingEnabled);
+    const isAllDone = useSelector(isAllTasksDone);
+    const isAllUndone = useSelector(isAllTasksUndone);
     const dispatch = useDispatch();
 
     return (
@@ -20,13 +24,13 @@ const Buttons = () => {
             {tasks.length > 0 && (
                 <>
                     <Button
-                        disabled={tasks.every(({ done }) => !done)}
+                        disabled={isAllUndone}
                         onClick={() => dispatch(toggleIsHidingEnabled())}
                     >
                         {isHidingEnabled ? "Pokaż" : "Ukryj"} ukończone
                     </Button>
                     <Button
-                        disabled={tasks.every(({ done }) => done)}
+                        disabled={isAllDone}
                         onClick={() => dispatch(doAllTasks())}
                     >
                         Ukończ wszystkie
