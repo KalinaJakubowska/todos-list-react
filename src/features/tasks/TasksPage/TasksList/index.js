@@ -66,7 +66,11 @@ const TasksList = () => {
                     {editableId === id
                         ? (
                             <EditableContent as="form">
-                                <ContentInput autoFocus value={newTaskName} onChange={({ target }) => setNewTaskName(target.value)} />
+                                <ContentInput
+                                    autoFocus
+                                    value={newTaskName}
+                                    onChange={({ target }) => setNewTaskName(target.value)}
+                                />
                                 <Button save onClick={() => onEditSave(id, name)}>
                                     Zapisz
                                 </Button>
