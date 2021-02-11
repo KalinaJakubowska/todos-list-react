@@ -5,7 +5,7 @@ import { getExampleTasks } from "./TasksPage/TasksList/getExampleTasks";
 function* fetchExampleTasksHandler() {
     try {
         yield put(setExampleTasksLoading(true));
-        yield delay(1000);
+        yield delay(200);
         const exampleTasks = yield call(getExampleTasks);
         yield put(addTasks(exampleTasks));
     } catch (error) {
