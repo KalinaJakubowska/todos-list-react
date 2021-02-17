@@ -9,43 +9,42 @@ import { selectDarkTheme } from "./common/themeSlice";
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import AuthorPage from "./features/author/AuthorPage";
 import { StyledNavLink, Navigation, NavItem } from "./styled.js";
-const App = () => {
-    const isDarkTheme = useSelector(selectDarkTheme);
+import { Normalize } from "styled-normalize";
 
-    return (
-        <ThemeProvider theme={isDarkTheme ? darkTheme : theme}>
-            <GlobalStyle />
-            <HashRouter>
-                <nav>
-                    <Navigation>
-                        <NavItem>
-                            <StyledNavLink to="/zadania">
-                                Zadania
-                            </StyledNavLink>
-                        </NavItem>
-                        <NavItem>
-                            <StyledNavLink to="/o-autorze">
-                                O autorze
-                            </StyledNavLink>
-                        </NavItem>
-                    </Navigation>
-                    <Switch>
-                        <Route path="/zadania/:id">
-                            <TaskPage />
-                        </Route>
-                        <Route path="/zadania">
-                            <TasksPage />
-                        </Route>
-                        <Route path="/o-autorze">
-                            <AuthorPage />
-                        </Route>
-                        <Route path="/">
-                            <Redirect to="/zadania" />
-                        </Route>
-                    </Switch>
-                </nav>
-            </HashRouter>
-        </ThemeProvider>
-    )
+const App = () => {
+  const isDarkTheme = useSelector(selectDarkTheme);
+
+  return (
+    <ThemeProvider theme={isDarkTheme ? darkTheme : theme}>
+      <Normalize />
+      <GlobalStyle />
+      <HashRouter>
+        <nav>
+          <Navigation>
+            <NavItem>
+              <StyledNavLink to="/zadania">Zadania</StyledNavLink>
+            </NavItem>
+            <NavItem>
+              <StyledNavLink to="/o-autorze">O autorze</StyledNavLink>
+            </NavItem>
+          </Navigation>
+          <Switch>
+            <Route path="/zadania/:id">
+              <TaskPage />
+            </Route>
+            <Route path="/zadania">
+              <TasksPage />
+            </Route>
+            <Route path="/o-autorze">
+              <AuthorPage />
+            </Route>
+            <Route path="/">
+              <Redirect to="/zadania" />
+            </Route>
+          </Switch>
+        </nav>
+      </HashRouter>
+    </ThemeProvider>
+  );
 };
 export default App;
